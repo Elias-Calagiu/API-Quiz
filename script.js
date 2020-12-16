@@ -3,34 +3,35 @@ var startScreen = document.getElementById("start-screen");
 // var choicesButtons = document.getElementById()
 var score = 0
 
-// var timeEl = document.querySelector(".time");
-// var mainEl = document.getElementById("main");
+startBtn.addEventListener("click", startQuiz)
 
-// var secondsLeft = 10;
-
-
-
-// var questions = [{
-//     text: "How many months have 28 days?", 
-//     choices: ["1", "6", "9", "12",],
-//     answer: "12"},{
-//     text: "whos the prez?", 
-//     choices: ["dog", "cat", "ya boy", "trump",],
-//     answer: "trump"},
-// ]
+var questions = [{
+    text: "How many months have 28 days?",
+    answers: [
+        text:"1", correct: false
+        text: "6", "9", "12",],
+    answer: "12"
+}, {
+    text: "whos the prez?",
+    choices: ["dog", "cat", "ya boy", "trump",],
+    answer: "trump"
+},
+]
 
 // for(var i<0; i <questions.length, i++ ){
 
 // }
 
-// function startQuiz() {
-//     // startBtn.classList.add("hide");
-//     // startBtn.addEventListener("click," function());
-//     console.log("as;ldkfj")
-// }
+function startQuiz() {
+    // startBtn.onclick("hide");
+    startBtn.classList.add("hide");
+    // startBtn.addEventListener("click", startQuiz());
+    console.log("as;ldkfj")
+}
+startQuiz();
 // startBtn.onclick = startQuiz;
 var timeEl = document.querySelector(".time");
-var secondsLeft = 60
+var secondsLeft = 3
 
 function setTime() {
     var timerInterval = setInterval(function () {
@@ -40,10 +41,11 @@ function setTime() {
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
             sendMessage();
+
         }
-    }, 1000)}
-    function sendMessage() {
-        timeEl.textContent = " You have failed catastrophically";
-    }
-    setTime();
-    
+    }, 1000)
+}
+function sendMessage() {
+    timeEl.textContent = " You have failed catastrophically";
+}
+setTime();
