@@ -2,11 +2,56 @@ var startBtn = document.getElementById("start-button");
 var startScreen = document.getElementById("start-screen");
 // var choicesButtons = document.getElementById()
 var getQuestion = document.getElementById("question");
-var answerButton1 =document.getElementById("answer-1");
-var answerButton2 =document.getElementById("answer-2");
-var answerButton3 =document.getElementById("answer-3");
+var answer1 =document.getElementById("answer-1");
+var answer2 =document.getElementById("answer-2");
+var answer3 =document.getElementById("answer-3");
+
 var score = 0
 
+
+var currentQuestion = 0
+var questions = [
+    {
+        number: 1,
+        text: "How many months have 28 days?",
+        answer: "C",
+        answers: [
+           "1",
+           "6",
+           "12"
+        ]
+    },
+    {
+        number: 2,
+        text: "When was the most recent ASOIAF installment release?",
+        answer: "B",
+        answers: [
+           "2020",
+           "2011",
+           "1999"
+        ]
+    },
+    {
+        number: 3,
+        text: "When is the last day of class?",
+        answer: "A",
+        answers: [
+           "March 4th",
+           "February 22nd",
+           "April 1st"
+        ]
+    },
+    {
+        number: 4,
+        text: "Who is my Bootcamp Professor?",
+        answer: "A",
+        answers: [
+           "Joe",
+           "Aslan",
+           "Zachary"
+        ]
+    },
+]
 // startBtn.addEventListener("click", startQuiz)
 
 startBtn.addEventListener("click",function startQuiz() {
@@ -21,34 +66,10 @@ startBtn.addEventListener("click",function startQuiz() {
 // startBtn.onclick = startQuiz;
 
 function showQuestion(questions) {
-    var questions = [
-        {
-            text: "How many months have 28 days?",
-            answers: [
-                { text: "1", correct: false },
-                { text: "6", correct: false },
-                { text: "12", correct: true }
-            ]
     
-            // text: "whos the prez?",
-            // choices: ["dog", "cat", "ya boy", "trump",],
-            // answer: "trump"
-        },
-    ]
-    
-    for(var i = 0; i < questions.length; i++ ){
-        getQuestion.textContent = questions[i].text
-        for (let i = 0; i < answers.length; i++) {
-            answerButton1.textContent = answers[i].text[i]
-            console.log(answerButton1);
-        answerButton2.textContent = answers[i].text[i]
-        answerButton3.textContent = answers[i].text[i]
-            
-        }
-        
-        }
     
 }
+
 
 
 
