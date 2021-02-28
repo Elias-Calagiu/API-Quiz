@@ -77,11 +77,28 @@ function showQuestion() {
     
 }
 
+function selectedAnswer(){
+    var selectedAnswer = this.getAttribute("data-value")
+    var rightAnswer = questions[currentQuestion].answer
+
+    if(selectedAnswer === rightAnswer){
+        score++
+        timeEl.textContent = "Way to go!"
+    } else {
+        secondsLeft - 5
+        timeEl.textContent = "OOF!"
+    }
+    if(currentQuestion < questions.length -1){
+        currentQuestion ++
+        showQuestion()
+    }
+}
 
 
 
-// var timeEl = document.querySelector(".time");
-// var secondsLeft = 3
+
+var timeEl = document.querySelector(".time");
+var secondsLeft = 3
 
 function setTime() {
     var timeEl = document.querySelector(".time");
