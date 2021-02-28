@@ -52,31 +52,40 @@ var questions = [
         ]
     },
 ]
-// startBtn.addEventListener("click", startQuiz)
+
 
 startBtn.addEventListener("click",function startQuiz() {
-    // startBtn.onclick("hide")
-        startBtn.classList.add("hide");
     console.log("as;ldkfj")
     showQuestion();
     setTime();
 
 })
-// startQuiz();
-// startBtn.onclick = startQuiz;
 
-function showQuestion(questions) {
-    
+
+
+answer1.addEventListener("click", selectedAnswer)
+answer2.addEventListener("click", selectedAnswer)
+answer3.addEventListener("click", selectedAnswer)
+
+
+
+function showQuestion() {
+    getQuestion.textContent = questions[currentQuestion].text
+    answer1.textContent = questions[currentQuestion].answers[0]
+    answer2.textContent = questions[currentQuestion].answers[1]
+    answer3.textContent = questions[currentQuestion].answers[2]
     
 }
 
 
 
 
-var timeEl = document.querySelector(".time");
-var secondsLeft = 3
+// var timeEl = document.querySelector(".time");
+// var secondsLeft = 3
 
 function setTime() {
+    var timeEl = document.querySelector(".time");
+    var secondsLeft = 3
     var timerInterval = setInterval(function () {
         secondsLeft--;
         timeEl.textContent = secondsLeft + " seconds left until catastrophic failure";
@@ -89,5 +98,7 @@ function setTime() {
     }, 1000)
 }
 function sendMessage() {
+    var timeEl = document.querySelector(".time");
+// var secondsLeft = 3
     timeEl.textContent = " You have failed catastrophically";
 }
