@@ -80,17 +80,23 @@ function showQuestion() {
 function selectedAnswer(){
     var selectedAnswer = this.getAttribute("data-value")
     var rightAnswer = questions[currentQuestion].answer
-
+    // var timeEl = document.querySelector(".time");
+    // var secondsLeft = 25
+    // secondsLeft --
     if(selectedAnswer === rightAnswer){
         score++
+        console.log(score);
         timeEl.textContent = "Way to go!"
     } else {
-        secondsLeft - 5
+        secondsLeft = secondsLeft - 5
+        console.log(secondsLeft);
         timeEl.textContent = "OOF!"
     }
     if(currentQuestion < questions.length -1){
         currentQuestion ++
         showQuestion()
+    } else{
+        timeEl.textContent = "Your trial is over"
     }
 }
 
@@ -98,11 +104,11 @@ function selectedAnswer(){
 
 
 var timeEl = document.querySelector(".time");
-var secondsLeft = 3
+var secondsLeft = 25
 
 function setTime() {
     var timeEl = document.querySelector(".time");
-    var secondsLeft = 3
+    var secondsLeft = 25
     var timerInterval = setInterval(function () {
         secondsLeft--;
         timeEl.textContent = secondsLeft + " seconds left until catastrophic failure";
