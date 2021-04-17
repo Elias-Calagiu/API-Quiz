@@ -55,6 +55,8 @@ var questions = [
 
 
 startBtn.addEventListener("click",function startQuiz() {
+    quizBox.style.display = "block";
+    startBtn.style.display = "none";
     console.log("as;ldkfj")
     showQuestion();
     setTime();
