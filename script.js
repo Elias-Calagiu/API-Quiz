@@ -88,7 +88,7 @@ function selectedAnswer(){
         console.log(score);
         timeEl.textContent = "Way to go!"
     } else {
-        secondsLeft = secondsLeft - 5
+        secondsLeft = secondsLeft - 5;
         console.log(secondsLeft);
         timeEl.textContent = "OOF!"
     }
@@ -120,6 +120,12 @@ function setTime() {
         }
     }, 1000)
 }
+
+function theEnd() {
+    resultBox.style.display = "block"
+    quizBox.style.display = "none"
+    document.getElementById("score").innerHTML = score;
+  }
 function sendMessage() {
     var timeEl = document.querySelector(".time");
 // var secondsLeft = 3
